@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Centered Two Column Table</title>
+  <style>
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #cdd0ec;
+    }
+    #bookInfo {
+            width: 60%;
+            margin: 5px;
+            padding: 5px;
+            background-color: #abb0ec;
+            border-radius: 8px;
+            position: relative;
+        }
+    .container {
+      display: flex;
+      justify-content: center;
+      margin-top: 5px;
+    }
+    .story-container {
+      text-align: center;
+    }
+    .story-container img {
+      width: 130px;
+      height: 170px;
+      display: block;
+      margin-top: 5px;
+    }
+    .toggle-btn {
+       background-color: #949add;
+       color: #5a1b8e;
+       font-family: 'Courier New', monospace;
+       font-weight; bold;
+       border: 1px solid #5a1b8e;
+       padding: 10px 20px;
+       font-size: 16px;
+       cursor: pointer;
+       border-radius: 5px;
+       text-align: center;
+       text-decoration: none;
+       display: block;
+       margin: 10px;
+    }
+    .story-content {
+      display: none;
+      text-align: left;
+      margin-top: 5px;
+    }
+    .story-content.show {
+      display: block;
+    }
+    h4 a {
+      color: #cfd2c7; 
+    }
+  </style>
+  <script>
+    function toggleContent(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      var content = document.getElementById("storyContent");
+      content.classList.toggle("show");
+    }
+  </script>
+</head>
+<body>
+	<center>
+		<h3>𓅓 Favorite Story 𓅓</h3>
+	</center>
+
+<div class="container">
+	<div id= "bookInfo">
+  <div class="story-container">
+    <center>
+    <h4><a href="https://www.wattpad.com/story/32919741-annabeth-chase-and-the-lightning-thief" target="_blank">Annabeth Chase and the Lightning Thief by Morro11</a></h4>
+    <img src="media/annalight.jpg" alt="Favorite Story Image">
+    </center>
+    <a href="#" class="toggle-btn" onclick="toggleContent(event)">Read More</a>
+    <div class="story-content" id="storyContent">
+      <p>
+        Shortly after finishing the first book, I took to the internet to find pdfs of the rest of the books in the series, and during my search I stumbled across a fan-made version of The Lightning Thief told through the supporting character's, Annabeth, point of view. The story was written at a level almost on par with the original, fully fleshing out parts of Annabeth's character that didn't receive as much attention in the original, and it filled my heart with satisfaction and curiosity. This was my introduction to unpublished stories made by normal, young people, and it inspired me to write my own stories! Over the years I've written dozens of stories adding more depth or changing scenes from the novels I love to read, or even with my original characters, and this fan-made story is responsible for that!
+      </p>
+    </div>
+  </div>
+	</div>
+</div>
+
+</body>
+</html>
+

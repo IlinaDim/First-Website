@@ -1,0 +1,140 @@
+<html>
+       <head>
+       	<title> Ilinas first web page </title>
+       	<style>
+                 body {
+                   font-family: 'Courier New', Courier, monospace;
+       		   background-color: #d3e2b5;
+       	        }
+                 .container {
+                   display: flex;
+                   justify-content: center;
+       	           margin-top: 50px;
+       	           flex-wrap: wrap; /* allow items tro wrap*/
+                }
+       	  .frame {
+       		  width: 450px;
+       		  height: 400px;
+       		  margin: 5px;
+       		  border: 5px solid #889966;
+       		  box-sizing; border-box;
+       	  }
+
+       	  iframe {
+       		  display: block;
+       		  width: 100%;
+       		  height: 100%;
+       	  }
+	  .large-frame {
+                  width: 730px; /* 3 times wider than the original 350px */
+		  height: 450px; /* 3 times taller than the original 300px */
+		  margin: 10px;
+		  border: 5px solid #889966;
+		  box-sizing: border-box;
+}
+               </style>
+       </head>
+
+       <body>
+       	<center> <H2> Hello </H2>
+       	<p>
+               	<h4>  This is my first page 
+                       </h4>
+       	</p>
+       	</center>
+       
+                  
+
+                   <p>
+       	    <h4> <right> 
+       			    I'm Ilina, and I've got a younger brother who's 
+       			    my partner-in-crime for all things mischief. 
+       			    During the COVID lockdown, my shy cat, Kirby, 
+       			    and I spent so much time together she developed 
+       			    separation anxiety, and I could honestly say the 
+       			    same for my brother. When I'm not keeping them 
+       			    company, you'll often find me nose-deep in books, 
+       			    lost in worlds crafted by incredible authors. I also 
+       			    love sketching out my favorite scenes from those books 
+       			    or rewriting the ones that don't quite hit right with me. 
+       			    It's my way of diving deeper into the stories I love and 
+       			    sometimes giving them my own creative twist. Nice to meet you! 
+       	       </right>  
+       	    </h4>
+       	    <p>
+
+       	    <center>
+       		    <h3> How I Spend Time With My Gremlins</h3>
+       	    </center>
+
+           <div class="container">
+
+       	    <table>
+       	    <!-- the first row -->
+       		<tr style="vertical-align: top;">
+       			<td>
+       			<img src= "media/ilia.jpg" alt= "Ilia's picture" width="200" height="240"> 
+       	                </td>
+       	                <td>
+       				<video width="320" height="240" autoplay controls loop>
+                                           <source src="media/kirby.mp4" type="video/mp4">
+                                       </video>
+       	                </td>
+       		</tr>
+       	    <!-- the second row -->
+       		<tr>
+       		<td style="vertical-align: top;"  width="430">
+       		  <ul style="list-style-type: none; padding-left: 0;">
+       	            <li>&#9733; Tortures me with the entire One Piece anime</li>
+       		    <li>&#9733; Screams at his Fortnite game while I’m studying</li>
+       		    <li>&#9733; Makes me spend most of my money on Starbucks and Takis</li>
+       		    <li>&#9733; Force him to read with me so his brain isn’t only full of Fortnite</li>
+       		  </ul>
+       		</td>
+                       <td style="vertical-align: top;" width="430">
+                         <ul style="list-style-type: none; padding-left: 0;">
+                           <li>&#9733; Watch Animal Planet (she loves looking at birds)</li>
+                           <li>&#9733; Try to sit on my computer or notebook if they’re in my lap and will not stop meowing unless I move them for her</li>
+                           <li>&#9733; Share my food with her (she steals it)</li>
+                           <li>&#9733; Sleeps on my face and is my alarm clock</li>
+                         </ul>
+                       </td>
+                     </tr>
+       	    </table>
+           </div>
+
+	<div class="container">
+        <table>
+          <!-- Row 1: page1.html and page2.html -->
+          <tr>
+            <td>
+              <iframe class="frame" src="page1.html"></iframe>
+            </td>
+            <td>
+              <iframe class="frame" src="page2.html"></iframe>
+            </td>
+          </tr>
+          <!-- Row 2: page3.html -->
+          <tr>
+            <td colspan="3">
+              <center>
+              <iframe class="large-frame" src="page3.html"></iframe>
+	      </center>
+            </td>
+
+
+          </tr>
+          <!-- Row 3: page4.html and page5.html -->
+          <tr>
+            <td>
+              <iframe class="frame" src="page4.html"></iframe>
+            </td>
+            <td>
+              <iframe class="frame" src="page5.html"></iframe>
+            </td>
+        </table>
+      </div>
+	
+       </body>
+</html>
+		 

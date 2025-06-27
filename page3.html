@@ -1,0 +1,174 @@
+<html>
+<head>
+  <title>Page 3</title>
+  <style>
+    body {
+      background-color: #f3d4e9;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      margin-top: 25px;
+    }
+    img {
+      width: 250px;
+      height: 150px;
+      margin-bottom: 20px;
+      border: 2px solid #ccc;
+    }
+    button {
+      font-family: 'Courier New', monospace;
+      margin-top: 10px;
+      padding: 8px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      background-color: #eea3d5;
+      color: #751a5a;
+    }
+    button:hover {
+      background-color: #d682ba;
+    }
+    #question {
+      margin-bottom: 10px;
+      font-family: 'Courier New', monospace;
+    }
+    #result {
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    let currentQuestion = 1;
+    let totalQuestions = 6;
+    let score = 0;
+    let quizCompleted= false;
+
+    function checkAnswer() {
+      let selectedOption = document.querySelector(`input[name="q${currentQuestion}"]:checked`);
+
+      if (selectedOption) {
+        let userAnswer = selectedOption.value;
+
+        if (userAnswer === `correct${currentQuestion}`) {
+          score++;
+        }
+
+        currentQuestion++;
+        if (currentQuestion <= totalQuestions) {
+          document.getElementById("question").innerHTML = getQuestion(currentQuestion);
+          document.getElementById("imageViewer").src = `media/image${currentQuestion}.jpg`;
+        } else {
+          displayFinalScore();
+        }
+      }
+    }
+
+    function getQuestion(questionNumber) {
+      const questions = [
+       "Takes a two-hour nap after eating lunch:<br>\
+          <input type='radio' name='q1' value='correct1'>Ilia<br>\
+          <input type='radio' name='q1' value='incorrect1'>Kirby<br>\
+          <input type='radio' name='q1' value='incorrect1'>Both of them<br>",
+        "Screams and makes noises for no reason:<br>\
+          <input type='radio' name='q2' value='incorrect2'>Ilia<br>\
+          <input type='radio' name='q2' value='incorrect2'>Kirby<br>\
+          <input type='radio' name='q2' value='correct2'>Both of them<br>",
+        "Woke me up at 2 am to clean throw up:<br>\
+          <input type='radio' name='q3' value='incorrect3'>Ilia<br>\
+          <input type='radio' name='q3' value='correct3'>Kirby<br>\
+          <input type='radio' name='q3' value='incorrect3'>Both of them<br>",
+        "Runs around the house at night because has too much energy:<br>\
+          <input type='radio' name='q4' value='incorrect4'>Ilia<br>\
+          <input type='radio' name='q4' value='correct4'>Kirby<br>\
+          <input type='radio' name='q4' value='incorrect4'>Both of them<br>",
+        "Complains when I study:<br>\
+          <input type='radio' name='q5' value='incorrect5'>Ilia<br>\
+          <input type='radio' name='q5' value='incorrect5'>Kirby<br>\
+          <input type='radio' name='q5' value='correct5'>Both of them<br>",
+        "Ate all the bacon off my sandwich once while I left it unattended for 3 minutes:<br>\
+          <input type='radio' name='q6' value='incorrect6'>Ilia<br>\
+          <input type='radio' name='q6' value='incorrect6'>Kirby<br>\
+          <input type='radio' name='q6' value='correct6'>Both of them<br>"
+      ];
+
+      return questions[questionNumber - 1];
+    }
+
+    function displayNextQuestion() {
+      let selectedOption = document.querySelector(`input[name="q${currentQuestion}"]:checked`);
+
+      if (selectedOption) {
+        let userAnswer = selectedOption.value;
+
+        if (userAnswer === `correct${currentQuestion}`) {
+          score++;
+        }
+
+        currentQuestion++;
+        if (currentQuestion <= totalQuestions) {
+          document.getElementById("question").innerHTML = getQuestion(currentQuestion);
+          document.getElementById("imageViewer").src = `media/image${currentQuestion}.jpg`;
+        } else {
+          displayFinalScore();
+        }
+      }
+    }
+
+    function displayFinalScore() {
+      // Display final score logic
+      let resultDiv = document.getElementById("result");
+      let percentage = (score / totalQuestions) * 100;
+
+      resultDiv.innerHTML = `You got ${score} out of ${totalQuestions} correct.<br> Your average score is ${percentage.toFixed(2)}%.`;
+      quizCompleted= true;
+      toggleButton();
+    }
+
+    function toggleButton() {
+      let button= document.getElementById("submitButton");
+      if (quizCompleted) {
+	button.innerHTML= "Replay Quiz";
+      } else {
+	button.innerHTML= "Submit Answer";
+      }
+    }
+
+    function handleButtonClick() {
+      if (quizCompleted) {
+	resetQuiz();
+      } else {
+	checkAnswer();
+	if (!quizCompleted) {
+	displayNextQuestion();
+	}
+      }
+    }
+
+    function resetQuiz() {
+      // Reset variables and display the first question again
+      currentQuestion = 1;
+      score = 0;
+      quizCompleted= false;
+      document.getElementById("result").innerHTML = '';
+      document.getElementById("question").innerHTML = getQuestion(currentQuestion);
+      document.getElementById("imageViewer").src = `media/image${currentQuestion}.jpg`;
+      toggleButton();
+    }
+  </script>
+</head>
+
+<body>
+  <h2>Who Did That?</h2>
+  <img id="imageViewer" src="media/image1.jpg">
+  <div id="question"></div>
+  <div id="result"></div>
+  <button onclick="handleButtonClick()" id="submitButton">Submit Answer</button>
+
+  <script>
+    document.getElementById("question").innerHTML = getQuestion(currentQuestion);
+  </script>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>Favorite Book</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            background-color: #eccdd1;
+            padding-top: 10px;
+        }
+        #bookInfo {
+            width: 60%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #e3a0a9;
+            border-radius: 8px;
+            position: relative;
+        }
+        img {
+            width: 150px;
+            height: 200px;
+            display: block;
+            margin: 0 auto 20px;
+            cursor: pointer;
+        }
+        .toggle-btn {
+            background-color: #cc848d;
+            color: #942f3b;
+	    font-family: 'Courier New', monospace;
+	    font-weight; bold;
+            border: 1px solid #942f3b;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: block;
+            margin: 0 auto;
+        }
+        .dropdown-content {
+            display: none;
+            text-align: left;
+            margin-top: 20px;
+        }
+        .dropdown-content.show {
+            display: block;
+        }
+    </style>
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById("myDropdown");
+            dropdown.classList.toggle("show");
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <h3>♆ Favorite Book ♆</h3> 
+    </center>
+
+    <div class="container">
+        <div id="bookInfo">
+            <img src="media/percylight.jpg" onclick="toggleDropdown()">
+            <button class="toggle-btn" onclick="toggleDropdown()">How Come?</button>
+            <div class="dropdown-content" id="myDropdown">
+                <p>
+                    I first read The Lightning Thief in 5th grade and I immediately fell in love with the series. 
+                    It will always have a special place in my heart because it was the first novel that had no trouble 
+                    fully captivating me with its world building and characters. As a child, this was the first book that 
+                    I found had an actually compelling main character with a view of the world that I actually related to; 
+                    Percy Jackson as a character was written to represent all the children who had trouble fitting in due 
+                    to things out of their control and no matter how much they tried to change themselves for others, yet 
+                    eventually found their place by meeting people who accept him despite his faults and that sentiment always 
+                    stuck with me, even from such a young age.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
